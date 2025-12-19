@@ -1,0 +1,18 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<h2>Edit Expense</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <select name="category">
+        <option>{{ expense.category }}</option>
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Entertainment</option>
+        <option>Others</option>
+    </select>
+    <input type="number" name="amount" value="{{ expense.amount }}">
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
